@@ -14,4 +14,14 @@ html {
 
 }
 
+:root {
+  --veryDarkBlue: hsl(235, 21%, 11%);
+  --darkDesaturatedBlue: hsl(235, 24%, 19%);
+  --lightGrayischBlue: hsl(234, 39%, 85%);
+  --GrayischBlueHover: hsl(236, 33%, 92%);
+  --darkGrayischBlue: hsl(233, 14%, 35%);
+  --veryDarkGrayischBlue: hsl(237, 14%, 26%);
+
+}
+
 /* ================= css-magic ================ */
