@@ -94,12 +94,7 @@ body {
   justify-content: space-between;
 }
 
-.hero img {
-  width: 25px;
-  height: 25px;
-}
-
-.todo__title {
+.hero__title {
   font-size: 3rem;
   font-weight: 800;
   color: white;
@@ -108,16 +103,32 @@ body {
   margin-bottom: 4rem;
 }
 
+.theme-change {
+  width: 25px;
+  height: 25px;
+}
+
+.item__input {
+  margin-bottom: 2rem;
+  border-radius: .5rem;
+  
+}
+
+.item__creator {
+  background-color: inherit;
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  font-family: inherit;
+}
+
+
 .todo__list {
   list-style-type: none;
 }
 
-.todo__item__create{
-  margin-bottom: 2rem;
-  border-radius: 0.5rem;
-}
 
-.todo__item {
+.item {
   display: flex;
   align-items: center;
   width: 100%;
@@ -130,7 +141,7 @@ body {
 
 }
 
-.todo__item__status {
+.todo__status {
   width: 22px;
   height: 22px;
   border: 2px solid var(--darkGrayischBlue);
@@ -138,7 +149,7 @@ body {
   margin-right: 2rem; 
 }
 
-.todo__item__status--done {
+.todo__status--done {
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -162,20 +173,24 @@ body {
   border-bottom: 1px solid var(--darkGrayischBlue);
 }
 
+
 .todo__task:first-of-type {
   border-radius: 5px 5px 0 0;
 }
+
 
 .todo__task:last-of-type {
   border-radius: 0 0 5px 5px;
   border: none;
 }
 
+
 .todo__task--done {
   text-decoration: line-through;
   color: var(--darkGrayischBlue);
 
 }
+
 
 .todo__overview {
   justify-content: space-between;
@@ -184,14 +199,15 @@ body {
 }
 
 
-.todo__menu {
+.todo__filter {
   margin-top: 2rem;
   border: none;
   border-radius: 0.5rem;
   justify-content: center;
 }
 
-.todo__menu__option {
+
+.filter__option {
   margin: 0 1.5rem;
   text-decoration: none;
   font-size: 1.6rem;
@@ -199,7 +215,8 @@ body {
   color: var(--darkGrayischBlue);
 }
 
-.todo__menu__option--active {
+
+.filter__option--active {
   color: aqua;
 }
 

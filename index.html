@@ -12,60 +12,57 @@
 
 </head>
 <body>
-
   <div class="container">
     <div class="todo">
       <div class="hero">
-        <h1 class="todo__title">Todo</h1>
-        <img src="./images/icon-sun.svg">
+        <h1 class="hero__title">Todo</h1>
+        <a class="theme-change"><img src="./images/icon-sun.svg"></a>
       </div>
-      <ul class="todo__list">
-        <li class="todo__item todo__item__create"> <!-- oder "todo__list__item" ? -->
-          <div class="todo__item__status"></div
-          <p class="todo__item__description"> Create a new todo...</p>
-        </li>
+      <form class="item item__input">
+        <div class="todo__status"></div>
+        <input class="item__creator"type="text"> <!-- Probleme mit BEMnamseln -->
+      </form>
         <ul>
-          <li class="todo__item todo__task todo__task--done">
-            <div class="todo__item__status todo__item__status--done "
-              ></div
-            <p class="todo__item__description">1x Ums Haus laufen</p>
+          <li class="item todo__task todo__task--done">
+            <div class="todo__status todo__status--done"></div
+            <p class="todo__description">1x Ums Haus laufen</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="todo__item todo__task">
-            <div class="todo__item__status"></div
-            <p class="todo__item__description">2x Treppen steigen</p>
+          <li class="item todo__task">
+            <div class="todo__status"></div
+            <p class="todo__description">2x Treppen steigen</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="todo__item todo__task">
-            <div class="todo__item__status"></div
-            <p class="todo__item__description">1 Stunde Youtube</p>
+          <li class="item todo__task">
+            <div class="todo__status"></div
+            <p class="todo__description">1 Stunde Youtube</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="todo__item todo__task">
-            <div class="todo__item__status"></div
-            <p class="todo__item__description">1 Stunde twitch</p>
+          <li class="item todo__task">
+            <div class="todo__status"></div
+            <p class="todo__description">1 Stunde twitch</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="todo__item todo__task">
-            <div class="todo__item__status"></div
-            <p class="todo__item__description">2 Stunden html & css üben</p>
+          <li class="item todo__task">
+            <div class="todo__status"></div
+            <p class="todo__description">2 Stunden html & css üben</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="todo__item todo__task"> 
-            <div class="todo__item__status"></div
-            <p class="todo__item__description">1 Glas Wein trinken</p>
+          <li class="item todo__task">  
+            <div class="todo__status"></div
+            <p class="todo__description">1 Glas Wein trinken</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="todo__item todo__task todo__overview">
+          <li class="item todo__task todo__overview">
             <p>5 items left</p>
             <p> Clear Completed</p>
           </li>
         </ul> 
-        <li class="todo__item todo__menu">
-          <a href="" class="todo__menu__option todo__menu__option--active">All</a>
-          <a href="" class="todo__menu__option">Active</a>
-          <a href="" class="todo__menu__option">Completed</a>
-        </li>
+        <div class="item todo__filter">
+          <a href="" class="filter__option filter__option--active">All</a>
+          <a href="" class="filter__option">Active</a>
+          <a href="" class="filter__option">Completed</a>
+        </div>
       </ul>
       <div class="howto">
       <p>Drag and drop to recorder list</p>
