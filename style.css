@@ -67,7 +67,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
  */
-
  .container {
   position: relative;
   display: flex;
@@ -81,17 +80,28 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 
-}
+  }
 }
 
 .todo {
-  height: auto;
-  width: 350px;
+  height: 100%;
+  width: 340px;
   margin: 4rem auto;
 }
 
+.hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero img {
+  width: 25px;
+  height: 25px;
+}
+
 .todo__title {
-  font-size: 2.2rem;
+  font-size: 3rem;
+  font-weight: 800;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1rem;
@@ -104,7 +114,6 @@ body {
 
 .todo__item__create{
   margin-bottom: 2rem;
-  border: none;
   border-radius: 0.5rem;
 }
 
@@ -113,15 +122,15 @@ body {
   align-items: center;
   width: 100%;
   height: 50px;
-  background-color: var(--veryDarkGrayischBlue);
+  background-color: var(--darkDesaturatedBlue);
   font-size: 1.6rem;
   color: white;
-  border-bottom: 1px solid var(--darkGrayischBlue);
+  
   padding: 2.5rem;
 
 }
 
-.todo__item__check {
+.todo__item__status {
   width: 22px;
   height: 22px;
   border: 2px solid var(--darkGrayischBlue);
@@ -129,10 +138,28 @@ body {
   margin-right: 2rem; 
 }
 
+.todo__item__status--done {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 2rem;
+  background-color: red;
+  background-image: url(./images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  
+}
+
+
 .fa-xmark {
   margin-left: auto;
-  color: grey;
+  color: var(--darkGrayischBlue);
    
+}
+
+.todo__task {
+  border-bottom: 1px solid var(--darkGrayischBlue);
 }
 
 .todo__task:first-of-type {
@@ -144,15 +171,46 @@ body {
   border: none;
 }
 
+.todo__task--done {
+  text-decoration: line-through;
+  color: var(--darkGrayischBlue);
 
-.todo__item__overview {
-  margin-top: 2rem;
-  border: none;
-  border-radius: 0.5rem;
+}
+
+.todo__overview {
+  justify-content: space-between;
+  font-size: 1.4rem;
+  color: var(--darkGrayischBlue);
 }
 
 
+.todo__menu {
+  margin-top: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  justify-content: center;
+}
 
+.todo__menu__option {
+  margin: 0 1.5rem;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--darkGrayischBlue);
+}
+
+.todo__menu__option--active {
+  color: aqua;
+}
+
+
+.howto {
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.6rem;
+  color: var(--darkGrayischBlue);
+}
 
 
 
