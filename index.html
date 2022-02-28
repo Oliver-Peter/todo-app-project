@@ -13,7 +13,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="todo">
+    <div class="todo-wrapper">
       <div class="hero">
         <h1 class="hero__title">Todo</h1>
         <a class="theme-change"><img src="./images/icon-sun.svg"></a>
@@ -23,47 +23,49 @@
         <input class="new-item"type="text"> <!-- Probleme mit BEMnamseln -->
       </form>
         <ul>
-          <li class="item todo__task" >
+          <li class="item task" >
             <input id="check" class="task__checkbox" type="checkbox">
             <label for="check" class="task__status task__status--done">1x Zum Kühlschrank rennen</label>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="item todo__task">
-            <div class="todo__status"></div
-            <p class="todo__description">2x Treppen steigen</p>
+          <li class="item task">
+            <div class="task__status"></div
+            <p class="task__description">2x Treppen steigen</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="item todo__task">
-            <div class="todo__status"></div
-            <p class="todo__description">1 Stunde Youtube</p>
+          <li class="item task">
+            <div class="task__status"></div
+            <p class="task__description">1 Stunde Youtube</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="item todo__task">
-            <div class="todo__status"></div
-            <p class="todo__description">1 Stunde twitch</p>
+          <li class="item task">
+            <div class="task__status"></div
+            <p class="task__description">1 Stunde twitch</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="item todo__task">
-            <div class="todo__status"></div
-            <p class="todo__description">2 Stunden html & css üben</p>
+          <li class="item task">
+            <div class="task__status"></div
+            <p class="task__description">2 Stunden html & css üben</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="item todo__task">  
-            <div class="todo__status"></div
-            <p class="todo__description">1 Glas Wein trinken</p>
+          <li class="item task">  
+            <div class="task__status"></div
+            <p class="task__description">1 Glas Wein trinken</p>
             <i class="fa-solid fa-xmark"></i>
           </li>
-          <li class="item todo__task todo__overview">
-            <p>5 items left</p>
-            <p> Clear Completed</p>
+          <li class="menu">
+            <div class="overview">
+              <p class="tasks-open"><span class="counter">5</span> items left</p>
+              <button type="button" class="clear">Clear Completed</button>
+            </div>
+            <div class="filter">
+              <button type="button" class="menu__option menu__option--active">All</button>
+              <button type="button" class="menu__option">Active</button>
+              <button type="button" class="menu__option">Completed</button>
+            </div>
+
           </li>
         </ul> 
-        <div class="item todo__filter">
-          <a href="" class="filter__option filter__option--active">All</a>
-          <a href="" class="filter__option">Active</a>
-          <a href="" class="filter__option">Completed</a>
-        </div>
-      </ul>
       <div class="howto">
       <p>Drag and drop to recorder list</p>
       </div>
