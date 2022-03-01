@@ -49,7 +49,7 @@ body {
 .todo-wrapper {
   height: 100%;
   width: 340px;
-  margin: 4rem auto; 
+  margin-top: 4rem;
 }
 
 .hero {
@@ -59,11 +59,10 @@ body {
 }
 
 .hero__title {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 3.2rem;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 1rem;
+  letter-spacing: 1.5rem;
   margin-bottom: 4rem; 
 }
 
@@ -75,7 +74,7 @@ body {
 
 
 .item-input {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   border-radius: .5rem; 
 }
 
@@ -98,11 +97,14 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 60px;
   background-color: var(--darkDesaturatedBlue);
   font-size: 1.6rem;
   color: white;
-  padding: 2.5rem; 
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: 2.5rem;
+   
 }
 
 
@@ -149,55 +151,19 @@ body {
 }
 
 
-.menu { 
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "todo todo todo todo todo"
-                        "filter filter filter filter filter";
-  row-gap: 2rem;   
-}
-
-
-.overview {
-  grid-area: todo;
-  height: 51px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  background-color: var(--darkDesaturatedBlue);
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-
 .tasks-open {
-  align-self: center;
   font-size: 1.4rem;
+  font-weight: bold;
   color: var(--darkGrayischBlue);
-  background-color: var(--darkDesaturatedBlue);
-  background-size: contain;
 }
 
 
-.clear{ 
+.clear {
   background-color: transparent;
   border: none;
-  color: var(--darkGrayischBlue);
-}
-
-
-.filter {
-  grid-area: filter;
-  height: 51px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--darkDesaturatedBlue); 
-  text-align: center;
-  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--darkGrayischBlue); 
 }
 
 
@@ -249,41 +215,32 @@ body {
   
     .todo-wrapper {
       height: 100%;
-      width: 450px;
-      margin: 4rem auto; 
+      width: 550px;
+      margin-top: 10rem;      
     }
 
+
+
     .menu { 
-      height: 100%;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "todo filti filti fitli todo2";
-                               
+      display: flex;
+      flex-wrap: wrap;               
     }
 
    
 
-    .task-open {
-      grid-area: todo;
+    .tasks-open {
+      order: 1;
+      margin-right: 6rem; 
     }
 
     .clear {
-      grid-area: todo2;
-      
+      order: 2;
+      margin-left: 4rem;
     }
     
-    .filter {
-     grid-area: filti;
-   }
-
-    
-    
-
-    
-    
- 
-    
-    
+    .menu__option {
+      order: 1;
+      margin-right: 2rem;
+         
+   } 
   }
