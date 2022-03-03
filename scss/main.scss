@@ -72,12 +72,60 @@
     .task {
       border-bottom: 1px solid $text-inactive; 
 
-      &__checkbox {
-        width: 22px;
-        height: 22px;
-        outline-style: dotted;
-        margin-right: 2rem; 
+      .check-wrapper {
+        position: relative;
+        height: 100%;
+        font-size: 2.2rem;
+        margin-right: 4rem;
+        cursor: pointer;
       }
+
+      &__checkbox {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+        cursor: pointer;
+
+      }
+      &__checkmark {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 1px solid $text-inactive;
+        background-color: transparent;
+      
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: none;
+          left: 9px;
+          top: 6px;
+          width: 6px;
+          height: 10px;
+          border: solid $text-main;
+          border-width: 0 3px 3px 0;
+          transform: rotate(45deg);  
+        }
+      
+      }
+      // REVIEW css function?
+      .task__checkbox:checked ~ .task__checkmark {
+        background: linear-gradient(to right top, $check-gradiant1 20%, $check-gradiant2);
+        border: none;
+      }
+
+      .task__checkbox:checked ~ .task__checkmark::after {
+        display: block;
+        
+      }
+
+    
 
       &__status {
         font-size: 1.6rem;
@@ -205,6 +253,8 @@
 
       .task__checkbox {
         cursor: pointer;
+        border: none;
+        box-shadow: inset 0px 0px 0px 5px #ffffff;
       }
       
       .task__status {
