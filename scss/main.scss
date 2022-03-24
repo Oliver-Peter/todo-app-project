@@ -47,23 +47,34 @@
         letter-spacing: 1rem;
       }
 
-      .theme-change {
-        width: 30px;
-        height: 30px;
+      .theme {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        background-image: url(./images/icon-sun.svg);
+        background-color: transparent;
+        background-size: cover;
+        border: none;
       }
     }
 
     .item-input {
       margin-bottom: 2rem;
-      border-radius: .5rem;
+      border-radius: 10px;
       
 
       .new-item {
+        width: 90%;
         background-color: transparent;
         border: none;
         font-size: 1.6rem;
         color: $text-primary;
         font-family: inherit;
+
+        
+        &:focus {
+          background-color: $text-inactive;
+        }
 
         @media screen and (min-width: 1440px) {
           font-size: 1.8rem;
@@ -71,9 +82,15 @@
       }
     }
 
-    .todo__list {
+    .todo-list {
       list-style-type: none;
+
     }
+
+    .todo-list > .item {
+      border-bottom: 1px solid $text-inactive;
+    }
+
 
     .item {
       display: flex;
@@ -83,7 +100,12 @@
       background-color: $bg-items;
       padding-left: 2rem;
       padding-right: 2rem;
+      
 
+      &:first-child {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      }
 
       .check-wrapper {
         position: relative;
@@ -93,7 +115,7 @@
         cursor: pointer;
       }
       
-      //FIXME /* Verschachtelung Korrekt? */
+    
       &__checkbox {
         position: absolute;
         opacity: 0;
@@ -152,23 +174,10 @@
         font-size: 2.2rem;
         background-color: transparent;
         border: none;
+        cursor: pointer;
       }
     }
 
-    .task {
-      border-bottom: 1px solid $text-inactive; /*task Eigenschaften zu item*/
-
-
-      &:first-of-type {
-        border-radius: 5px 5px 0 0;
-      }
-
-      &:last-of-type {
-        border-radius: 0 0 5px 5px;
-        border: none;
-      } 
-    }
-    // REVIEW css function?
     .item__checkbox:checked~.item__checkmark {
       background: linear-gradient(to right top, $check-gradiant1 20%, $check-gradiant2);
       border: none;
@@ -178,7 +187,7 @@
       display: block;
 
     }
-  }  
+  }
 }
 
 /* =================== Todo Filter menu =================== */
@@ -234,7 +243,7 @@
     order: 2;
     width: 100%;
     height: 35px;
-    background-color: $bg-main;
+    background-color: transparent;
 
     @media screen and (min-width: 1440px) {
       order: 2;
