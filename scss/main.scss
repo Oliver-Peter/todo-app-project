@@ -1,4 +1,4 @@
-@import "scss/DarkTheme";
+@import "scss/LightTheme";
 @import "scss/presets";
 
 /* ================= scss-magic ================ */
@@ -10,15 +10,14 @@
   background-color: $bg-main;
   height: 100%;
   width: 100%;
-
   background-image: $backg-img-mobile;
   background-repeat: no-repeat;
   background-size: contain;
 
   @media screen and (min-width: 1440px) {
-    
+
     background-image: $backg-img-desktop;
-  
+
   }
 
   .todo-wrapper {
@@ -26,12 +25,14 @@
     width: 340px;
     margin-top: 3rem;
 
+
     @media screen and (min-width: 1440px) {
 
       width: 550px;
       margin-top: 10rem;
 
     }
+
     .hero {
       display: flex;
       justify-content: space-between;
@@ -61,7 +62,6 @@
     .item-input {
       margin-bottom: 2rem;
       border-radius: 10px;
-      
 
       .new-item {
         width: 90%;
@@ -71,7 +71,7 @@
         color: $text-primary;
         font-family: inherit;
 
-        
+
         &:focus {
           background-color: $text-inactive;
         }
@@ -84,10 +84,11 @@
 
     .todo-list {
       list-style-type: none;
-
+      box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.1),
+        -1px 0px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .todo-list > .item {
+    .todo-list>.item {
       border-bottom: 1px solid $text-inactive;
     }
 
@@ -100,7 +101,9 @@
       background-color: $bg-items;
       padding-left: 2rem;
       padding-right: 2rem;
-      
+
+
+
 
       &:first-child {
         border-top-right-radius: 10px;
@@ -114,14 +117,16 @@
         margin-right: 4rem;
         cursor: pointer;
       }
-      
-    
+
+
       &__checkbox {
         position: absolute;
         opacity: 0;
         height: 0;
         width: 0;
         cursor: pointer;
+
+
 
         @media screen and (min-width: 1440px) {
           border: none;
@@ -137,7 +142,22 @@
         width: 25px;
         border-radius: 50%;
         border: 1px solid $text-inactive;
-        background-color: transparent;
+
+
+
+        &::before {
+          content: "";
+          display: none;
+          height: 21px;
+          width: 21px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          background-color: $bg-items;
+
+        }
 
         &::after {
           content: "";
@@ -178,15 +198,30 @@
       }
     }
 
+    .item__checkbox:hover~.item__checkmark {
+      background: linear-gradient(to right top, $check-gradiant1 20%, $check-gradiant2);
+      border: none;
+    }
+
+    .item__checkbox:hover~.item__checkmark::before {
+      display: block;
+    }
+
     .item__checkbox:checked~.item__checkmark {
       background: linear-gradient(to right top, $check-gradiant1 20%, $check-gradiant2);
       border: none;
+    }
+
+    .item__checkbox:checked~.item__checkmark::before {
+      display: none;
     }
 
     .item__checkbox:checked~.item__checkmark::after {
       display: block;
 
     }
+
+
   }
 }
 
@@ -229,11 +264,11 @@
     font-family: 'Josefin Sans', sans-serif;
     color: $text-inactive;
     border-radius: 0 0 10px 0;
-    
+
 
     @media screen and (min-width: 1440px) {
       order: 2;
-      flex-basis: 25%; 
+      flex-basis: 25%;
       padding-right: 2rem;
       cursor: pointer;
     }
