@@ -20,10 +20,10 @@
       </div>
       <form class="item item-input">
         <label class="check-wrapper">
-          <input class="item__checkbox" type="checkbox">
+          <input class="item__checkbox" type="checkbox" >
           <span class="item__checkmark"></span>
         </label>
-        <input class="new-item" type="text"> <!-- Probleme mit BEMnamseln -->
+        <input class="new-item" type="text" placeholder="Create a new todo..."> <!-- Probleme mit BEMnamseln -->
       </form>
         <ul class="todo-list">
           <li class="item" >
@@ -75,10 +75,11 @@
             <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
           </li>
           <li class="menu">
-            <p class="tasks-open">5 items left</p>
-            <button type="button" class="clear">Clear Completed</button>
-            <div class="menu__gap"></div>
-            <div class="menu__filter">
+            <div class="menu__item">
+              <p class="tasks-open">5 items left</p>
+              <button type="button" class="clear">Clear Completed</button>
+            </div>
+            <div class="menu__item filter">
               <button type="button" class="option option--active">All</button>
               <button type="button" class="option">Active</button>
               <button type="button" class="option">Completed</button>

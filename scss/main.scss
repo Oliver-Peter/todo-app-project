@@ -62,6 +62,7 @@
     .item-input {
       margin-bottom: 2rem;
       border-radius: 10px;
+      
 
       .new-item {
         width: 90%;
@@ -70,11 +71,13 @@
         font-size: 1.6rem;
         color: $text-primary;
         font-family: inherit;
-
+        
 
         &:focus {
-          background-color: $text-inactive;
+          outline: none;
+          background-color: transparent;
         }
+
 
         @media screen and (min-width: 1440px) {
           font-size: 1.8rem;
@@ -232,22 +235,25 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
 
   @media screen and (min-width: 1440px) {
-    display: flex;
+    
+    
+  }
+
+  &__item {
+    width: 100%;
+    height: 60px;
+    background-color: $bg-items;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
   }
 
   .tasks-open {
     order: 1;
-    display: flex;
-    align-items: center;
-    width: 50%;
-    height: 60px;
-    padding-left: 2rem;
-    background-color: $bg-items;
-    color: $text-inactive;
-    font-size: 1.4rem;
-    border-radius: 0 0 0 10px;
+ 
 
     @media screen and (min-width: 1440px) {
       flex-basis: 25%;
@@ -256,49 +262,31 @@
 
   .clear {
     order: 1;
-    width: 50%;
-    height: 60px;
     border: none;
     background-color: $bg-items;
     font-size: 1.4rem;
     font-family: 'Josefin Sans', sans-serif;
     color: $text-inactive;
-    border-radius: 0 0 10px 0;
+    
+    
 
 
     @media screen and (min-width: 1440px) {
       order: 2;
-      flex-basis: 25%;
+     /*  flex-basis: 25%;
       padding-right: 2rem;
-      cursor: pointer;
+      cursor: pointer; */
     }
   }
 
-  &__gap {
-    order: 2;
-    width: 100%;
-    height: 35px;
-    background-color: transparent;
-
-    @media screen and (min-width: 1440px) {
-      order: 2;
-    }
-  }
 
   &__filter {
     order: 3;
-    flex-basis: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: $bg-items;
-    border-radius: 10px;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    
+
 
     @media screen and (min-width: 1440px) {
       order: 1;
-      flex-basis: 50%;
       border-radius: 0;
       margin: auto;
     }
@@ -309,7 +297,7 @@
     background-color: transparent;
     color: $text-inactive;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 600;
     margin: auto;
 
