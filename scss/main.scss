@@ -106,8 +106,6 @@
       padding-right: 2rem;
 
 
-
-
       &:first-child {
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
@@ -117,7 +115,7 @@
         position: relative;
         height: 100%;
         font-size: 2.2rem;
-        margin-right: 4rem;
+        margin-right: 4.5rem;
         cursor: pointer;
       }
 
@@ -141,26 +139,14 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        height: 25px;
-        width: 25px;
+        left: 2px;
+        height: 26px;
+        width: 26px;
         border-radius: 50%;
         border: 1px solid $text-inactive;
-
-
-
-        &::before {
-          content: "";
-          display: none;
-          height: 21px;
-          width: 21px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          border-radius: 50%;
-          background-color: $bg-items;
-
-        }
+        z-index: 100;
+        background-color: $bg-items;
+      
 
         &::after {
           content: "";
@@ -173,7 +159,22 @@
           border: solid $text-secundary;
           border-width: 0 3px 3px 0;
           transform: rotate(45deg);
+          
         }
+      }
+
+      &__checkborder {
+        position: absolute;
+        display: none;
+        width: 29px;
+        height: 29px;
+        margin: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0.5px;
+        border-radius: 50%;
+        background: $check-gradiant2;
+        z-index: 1;
       }
 
       &__status {
@@ -201,26 +202,24 @@
       }
     }
 
-    .item__checkbox:hover~.item__checkmark {
-      background: linear-gradient(to right top, $check-gradiant1 20%, $check-gradiant2);
-      border: none;
-    }
-
-    .item__checkbox:hover~.item__checkmark::before {
+    .item__checkbox:hover~.item__checkborder {
       display: block;
     }
+
 
     .item__checkbox:checked~.item__checkmark {
-      background: linear-gradient(to right top, $check-gradiant1 20%, $check-gradiant2);
+      background-image: linear-gradient(to right top, $check-gradiant1 20%, $check-gradiant2);
       border: none;
     }
 
-    .item__checkbox:checked~.item__checkmark::before {
-      display: none;
-    }
-
+  
     .item__checkbox:checked~.item__checkmark::after {
       display: block;
+
+    }
+
+    .item__checkbox:checked~.item__checkborder {
+      display: none;
 
     }
 
