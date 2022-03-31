@@ -19,16 +19,16 @@
         <button type="button" class="theme"></button>
       </div>
       <form class="item item-input">
-        <label class="check-wrapper">
+        <label class="item__checkwrap">
           <input class="item__checkbox" type="checkbox" >
           <span class="item__checkmark"></span>
           <span class="item__checkborder"></span>
         </label>
         <input class="new-item" type="text" placeholder="Create a new todo..."> <!-- Probleme mit BEMnamseln -->
       </form>
-        <ul class="todo-list">
-          <li class="item" >
-            <label class="check-wrapper">
+        <ul class="todo">
+          <li class="item">
+            <label class="item__checkwrap">
               <input class="item__checkbox" type="checkbox">
               <span class="item__checkmark"></span>
               <span class="item__checkborder"></span>
@@ -37,7 +37,7 @@
             <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
           </li>
           <li class="item">
-            <label class="check-wrapper">
+            <label class="item__checkwrap">
               <input class="item__checkbox" type="checkbox">
               <span class="item__checkmark"></span>
               <span class="item__checkborder"></span>
@@ -46,7 +46,7 @@
             <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
           </li>
           <li class="item">
-            <label class="check-wrapper">
+            <label class="item__checkwrap">
               <input class="item__checkbox" type="checkbox">
               <span class="item__checkmark"></span>
               <span class="item__checkborder"></span>
@@ -55,7 +55,7 @@
             <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
           </li>
           <li class="item">
-            <label class="check-wrapper">
+            <label class="item__checkwrap">
               <input class="item__checkbox" type="checkbox">
               <span class="item__checkmark"></span>
               <span class="item__checkborder"></span>
@@ -64,7 +64,7 @@
             <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
           </li>
           <li class="item">
-            <label class="check-wrapper">
+            <label class="item__checkwrap">
               <input class="item__checkbox" type="checkbox">
               <span class="item__checkmark"></span>
               <span class="item__checkborder"></span>
@@ -73,7 +73,7 @@
             <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
           </li>
           <li class="item">  
-            <label class="check-wrapper">
+            <label class="item__checkwrap">
               <input class="item__checkbox" type="checkbox">
               <span class="item__checkmark"></span>
               <span class="item__checkborder"></span>
@@ -82,15 +82,13 @@
             <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
           </li>
           <li class="menu">
-            <div class="menu__item">
-              <p class="tasks-open">5 items left</p>
-              <button type="button" class="clear">Clear Completed</button>
-            </div>
-            <div class="menu__item filter">
-              <button type="button" class="option option--active">All</button>
-              <button type="button" class="option">Active</button>
-              <button type="button" class="option">Completed</button>
-            </div>
+              <p class="task__open">5 items</p>
+              <button type="button" class="task__clear">Clear Completed</button>
+            <span class="filter">
+              <button type="button" class="filter__option filter__option--active">All</button>
+              <button type="button" class="filter__option">Active</button>
+              <button type="button" class="filter__option">Completed</button>
+            </span>
           </li>
         </ul> 
       <div class="howto">
