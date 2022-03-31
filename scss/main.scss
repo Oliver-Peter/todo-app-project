@@ -198,11 +198,21 @@
         border: none;
         cursor: pointer;
 
+        @media screen and (min-width: 1440px) {
+          display: none;
+        }
+
         &:hover {
           color: hsl(235, 19%, 35%);
-        }
+        } 
       }
     }
+    @media screen and (min-width: 1440px) {
+      .item:hover>.item__delete {
+        display: block;
+      }
+    }
+    
 
 
 
