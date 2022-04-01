@@ -1,57 +1,24 @@
 @import "scss/presets";
 @import "scss/mixins";
+@import "scss/colors";
 @import "scss/item";
 @import "scss/menu";
-
-:root {
-
-  /* ============== light-colors ============== */
-
---clr-bg-main_light: hsl(233, 11%, 84%);
---clr-bg-items_light: hsl(236, 33%, 92%);
---clr-primary_light: hsl(235, 19%, 35%);
---clr-secundary_light: hsl(0, 0%, 98%);
---clr-inactive_light: hsl(236, 9%, 61%);
-
---clr-check-gradiant1_light: hsl(192, 100%, 67%);
---clr-check-gradiant2_light: hsl(280, 87%, 65%);
-
---backg-mobile_light: url(./images/bg-mobile-light.jpg);
---backg-desktop_light: url(./images/bg-desktop-light.jpg);
-
-
-/* ================ dark-colors =============== */
-
---clr-bg-main_dark: hsl(235, 21%, 11%);
---clr-bg-items_dark: hsl(235, 24%, 19%);
---clr-primary_dark: hsl(234, 39%, 85%);
---clr-secundary_dark: hsl(0, 0%, 98%);
---clr-inactive_dark: hsl(233, 14%, 35%);
-
---clr-check-gradiant1_dark: #6C49C6;
---clr-check-gradiant2_dark: #761C76;
-
---backg-mobile_dark: url(./images/bg-mobile-dark.jpg);
---backg-desktop_dark: url(./images/bg-desktop-dark.jpg);
-
-}
-
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--clr-bg-main_light);
+  background-color: var(--clr-bg-main);
   height: 100%;
   width: 100%;
-  background-image: var(--backg-mobile_light);
+  background-image: var(--backg-mobile);
   background-repeat: no-repeat;
   background-size: contain;
 
   @include mediaViewport(desktop) {
 
-    background-image: var(--backg-desktop_light);
+    background-image: var(--backg-desktop);
 
   }
 
@@ -59,7 +26,6 @@
     height: 100%;
     width: 340px;
     margin-top: 3rem;
-
 
     @include mediaViewport(desktop) {
 
@@ -84,11 +50,13 @@
       }
 
       .theme {
-        width: 25px;
-        height: 25px;
+        width: 32px;
+        height: 32px;
         cursor: pointer;
-        background-image: url(./images/icon-moon.svg);
+        background-image: var(--theme-icon);
         background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
         background-size: cover;
         border: none;
       }
@@ -96,13 +64,14 @@
     .creator {
       margin-bottom: 2rem;
       border-radius: 10px;
+      border: none;
     
       .new-todo {
         width: 90%;
-        background-color: transparent;
+        background-color: transparent; 
         border: none;
         font-size: 1.6rem;
-        color: var(--clr-primary_light);
+        color: var(--clr-primary);
         font-family: inherit;
     
     
@@ -130,5 +99,5 @@
   text-align: center;
   margin-top: 6rem;
   font-size: 1.6rem;
-  color: var(--clr-inactive_light);
+  color: var(--clr-inactive);
 }

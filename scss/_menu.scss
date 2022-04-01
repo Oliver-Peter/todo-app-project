@@ -10,11 +10,11 @@
     height: 60px;
     line-height: 60px;
     font-size: 1.2rem;
-    color: var(--clr-inactive_light);
+    color: var(--clr-inactive);
     text-align: start;
     padding-left: 2rem;
     padding-right: 1rem;
-    background-color: var(--clr-bg-items_light);
+    background-color: var(--clr-bg-items);
     border-radius: 0 0 0 10px;
 
 
@@ -30,12 +30,12 @@
     flex-basis: 70%;
     height: 60px;
     font-size: 1.2rem;
-    color: clr(--clr-inactive_light);
+    color: var(--clr-inactive);
     line-height: 60px;
     text-align: end;
     padding-right: 2rem;
     padding-left: 1rem;
-    background-color: var(--clr-bg-items_light);
+    background-color: var(--clr-bg-items);
     border: none;
     font-family: 'Josefin Sans', sans-serif;
     border-radius: 0 0 10px 0;
@@ -51,7 +51,7 @@
     }
 
     &:hover {
-      color: hsl(235, 19%, 35%);
+      color: var(--clr-primary);
     }
   }
 
@@ -65,7 +65,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     margin-top: 2rem;
-    background-color: var(--clr-bg-items_light);
+    background-color: var(--clr-bg-items);
     border-radius: 10px;
 
     @include mediaViewport(desktop) {
@@ -80,7 +80,7 @@
 
       border: none;
       background-color: transparent;
-      color: var(--clr-inactive_light);
+      color: var(--clr-inactive);
       font-family: 'Josefin Sans', sans-serif;
       font-size: 1.4rem;
       font-weight: 600;
@@ -91,11 +91,11 @@
       }
   
       &:hover {
-        color: hsl(235, 19%, 35%);
+        color: var(--clr-primary);
       }
   
       &--active {
-        color: red;
+        color: var(--clr-active);
       }
     }
   }
