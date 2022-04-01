@@ -1,0 +1,138 @@
+.item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: var(--clr-bg-items_light);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-bottom: 1px solid var(--clr-inactive_light);
+
+
+  &:first-child {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  &__checkwrap {
+    position: relative;
+    height: 100%;
+    font-size: 2.2rem;
+    margin-right: 4.5rem;
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+
+    @include mediaViewport(desktop) {
+      border: none;
+      box-shadow: inset 0px 0px 0px 5px #ffffff;
+    }
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--clr-inactive_light);
+    z-index: 100;
+    background-color: var(--clr-bg-items_light);
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 10px;
+      top: 6px;
+      width: 6px;
+      height: 10px;
+      border: solid var(--clr-secundary_light);
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__checkborder {
+    position: absolute;
+    display: none;
+    width: 29px;
+    height: 29px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0.5px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right top, var(--clr-check-gradiant1_light) 30%, var(--clr-check-gradiant2_light));
+    z-index: 1;
+  }
+
+  &__status {
+    font-size: 1.6rem;
+    color: var(--clr-primary_light);
+
+    @include mediaViewport(desktop) {
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  }
+
+  &__status--done {
+    text-decoration: line-through;
+    color: var(--clr-inactive_light);
+  }
+
+  &__delete {
+    margin-left: auto;
+    color: var(--clr-inactive_light);
+    font-size: 2.2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    @include mediaViewport(desktop) {
+      display: none;
+    }
+
+    &:hover { 
+      color: hsl(235, 19%, 35%);
+    } 
+  }
+}
+
+
+@include mediaViewport(desktop) {
+  .item:hover>.item__delete {
+    display: block;
+  }
+}
+
+.item__checkbox:hover~.item__checkborder {
+  display: block;
+}
+
+
+.item__checkbox:checked~.item__checkmark {
+  background: linear-gradient(to right top, var(--clr-check-gradiant1_light) 30%, var(--clr-check-gradiant2_light));
+  border: none;
+}
+
+
+.item__checkbox:checked~.item__checkmark::after {
+  display: block;
+
+}
+
+.item__checkbox:checked~.item__checkborder {
+  display: none;
+
+}
