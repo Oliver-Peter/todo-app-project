@@ -15,7 +15,7 @@
   background-image: var(--backg-mobile);
   background-repeat: no-repeat;
   background-size: contain;
-
+ 
   @include mediaViewport(desktop) {
 
     background-image: var(--backg-desktop);
