@@ -27,17 +27,15 @@ function addTodoItem() {
       var child = e.target.parentNode;
       var parent = child.parentNode;
       parent.remove();
-      console.log(parent);
     });
   }
-} //! Doppelt gemopelt */
+} //! Doppelt gemoppelt */
 
 for (var button of delButtons) {
   button.addEventListener("click", function (e) {
     var child = e.target.parentNode;
     var parent = child.parentNode;
     parent.remove();
-    console.log(parent);
   });
 }
 
