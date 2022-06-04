@@ -5,6 +5,8 @@ export let todoArr = [];
 
 export function setArray(array) {
 todoArr = array;
+localStorage.setItem('todos', JSON.stringify(todoArr));
+
 }
 
 

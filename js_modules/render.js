@@ -43,7 +43,7 @@ export const render = function () {
       <span class="item__checkborder"></span>
     </label>
     <p class="item__status ">${todo}</p>
-    <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>`
+    <button type="button" class="item__delete" data-index=${index}>X</button>`
 
     li.classList.add('item')
 
