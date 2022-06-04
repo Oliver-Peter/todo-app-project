@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" type="text/css"  href="main.css">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Todo app</title>
@@ -27,14 +26,16 @@
         <input class="new-todo" type="text" placeholder="Create a new todo..."> <!-- Probleme mit BEMnamseln -->
       </form>
         <ul class="todo-list">
-          <li class="item">
+          <!-- <li class="item">
             <label class="item__checkwrap">
               <input class="item__checkbox" type="checkbox">
               <span class="item__checkmark"></span>
               <span class="item__checkborder"></span>
             </label>
             <p class="item__status ">1x Fasnacht</p>
-            <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
+            <input type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></input>
+            <input type="button" class="item__up"><i class="fa-solid fa-up"></i></input>
+            <input type="button" class="item__down"><i class="fa-solid fa-down"></i></input>
           </li>
           <li class="item">
             <label class="item__checkwrap">
@@ -43,44 +44,12 @@
               <span class="item__checkborder"></span>
             </label>
             <p class="item__status ">1x Fasnacht</p>
-            <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
+            <input type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></input>
+            <input type="button" class="item__up"><i class="fa-solid fa-up"></i></input>
+            <input type="button" class="item__down"><i class="fa-solid fa-down"></i></input>
           </li>
-          <li class="item">
-            <label class="item__checkwrap">
-              <input class="item__checkbox" type="checkbox">
-              <span class="item__checkmark"></span>
-              <span class="item__checkborder"></span>
-            </label>
-            <p class="item__status ">1x Fasnacht</p>
-            <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
-          </li>
-          <li class="item">
-            <label class="item__checkwrap">
-              <input class="item__checkbox" type="checkbox">
-              <span class="item__checkmark"></span>
-              <span class="item__checkborder"></span>
-            </label>
-            <p class="item__status ">1x Fasnacht</p>
-            <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
-          </li>
-          <li class="item">
-            <label class="item__checkwrap">
-              <input class="item__checkbox" type="checkbox">
-              <span class="item__checkmark"></span>
-              <span class="item__checkborder"></span>
-            </label>
-            <p class="item__status ">1x Fasnacht</p>
-            <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
-          </li>
-          <li class="item">  
-            <label class="item__checkwrap">
-              <input class="item__checkbox" type="checkbox">
-              <span class="item__checkmark"></span>
-              <span class="item__checkborder"></span>
-            </label>
-            <p class="item__status ">1x Fasnacht</p>
-            <button type="button" class="item__delete"><i class="fa-solid fa-xmark"></i></button>
-          </li>
+          ... usw  -->
+
           <li class="menu">
               <p class="task__open">5 items</p>
               <button type="button" class="task__clear">Clear Completed</button>
@@ -101,6 +70,6 @@
     </div>
   </div>
   <script src="https://kit.fontawesome.com/936e07661a.js" crossorigin="anonymous"></script>
-  <script src="./script.js"></script>
+<script type='module' src="./js_modules/app.js"></script>
 </body>
 </html>
