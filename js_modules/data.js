@@ -1,12 +1,17 @@
 
 export const defaultTodos = ['Einkaufen gehen', 'Wäsche machen', 'Trompete üben', 'Coden üben'];
 
-export let todoArr = [];
+export function initialStorage() {
 
-export function setArray(array) {
-todoArr = array;
-localStorage.setItem('todos', JSON.stringify(todoArr));
+let defaultTodosJSON = JSON.stringify(defaultTodos);
 
-}
+
+localStorage.setItem('todos', defaultTodosJSON);
+
+};
+
+
+
+
 
 

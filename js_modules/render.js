@@ -1,35 +1,26 @@
 //SECTION import necessyry modules and set default data and  variables
 
-import {defaultTodos, todoArr, setArray} from '/js_modules/data.js';
+import {initialStorage} from '/js_modules/data.js';
 import { list } from "/js_modules/DOM.js";
 
 
 //NOTE fill arrays and localStorage
-export const setDefault = () => {
 
-let defaultTodosJSON = JSON.stringify(defaultTodos);
-
-localStorage.setItem('defaultTodos', defaultTodosJSON);
-
-localStorage.setItem('todos', JSON.stringify(todoArr));
-
-}
-setDefault();
 
 //!SECTION
 
 // SECTION render function
 
+export let todoArr = [];
+
 export const render = function () {
   list.innerHTML = '';
 
-  if(localStorage.getItem('todos') === '[]') {
-    setArray(JSON.parse(localStorage.getItem('defaultTodos')));
+  if(localStorage.getItem('todos') === null ||localStorage.getItem('todos') === '[]') {
+    initialStorage();
+  } 
 
-  } else {
-    setArray(JSON.parse(localStorage.getItem('todos')));
-  }
-  console.log(todoArr);
+  todoArr = JSON.parse(localStorage.getItem('todos'));
 
   todoArr.forEach((todo, index) => {
 
