@@ -1,6 +1,6 @@
-import { initialStorage } from "/js_modules/data.js";
-import { render } from "/js_modules/render.js";
-import { list } from "/js_modules/DOM.js";
+import { initialStorage  } from "/js_modules/data.js";
+import { render, todoArr } from "/js_modules/render.js";
+import { list, delBtn, checkBox, todoInput } from "/js_modules/DOM.js";
 import * as Tools from "/js_modules/tools.js";
 
 
@@ -15,3 +15,13 @@ list.addEventListener('click', (event) => {
     Tools.done(event.target.dataset.index);
   }
 });
+
+todoInput.addEventListener('keydown', event =>  {
+  if(event.key == 'Enter') {
+    event.preventDefault();
+    todoArr.unshift(event.target.value);
+    localStorage.setItem('todos', JSON.stringify(todoArr));
+    render();
+    event.target.value = '';
+  }
+})

@@ -13,6 +13,7 @@ export function done (index) {
   let newArr = todoArr.splice(index, 1);
   let finishedTodo = newArr[0];
   todoArr.push(finishedTodo);
+  localStorage.setItem('todos', JSON.stringify(todoArr));
   render();
 
   //erledigte Aufgaben sollen durchgestrichen sein

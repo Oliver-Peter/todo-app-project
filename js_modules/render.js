@@ -2,11 +2,6 @@
 
 import {initialStorage} from '/js_modules/data.js';
 import { list } from "/js_modules/DOM.js";
-
-
-//NOTE fill arrays and localStorage
-
-
 //!SECTION
 
 // SECTION render function
@@ -16,11 +11,11 @@ export let todoArr = [];
 export const render = function () {
   list.innerHTML = '';
 
-  localStorage.setItem('todos', JSON.stringify(todoArr));
 
-  if(localStorage.getItem('todos') === null ||localStorage.getItem('todos') === '[]') {
+  if (localStorage.getItem('todos') === null ||localStorage.getItem('todos') === '[]') {
     initialStorage();
   } 
+  
 
   todoArr = JSON.parse(localStorage.getItem('todos'));
 
@@ -42,7 +37,7 @@ export const render = function () {
 
     list.appendChild(li);
 
-  })
+  });
 
   // NOTE add item-Menue to list
 
