@@ -16,6 +16,8 @@ export let todoArr = [];
 export const render = function () {
   list.innerHTML = '';
 
+  localStorage.setItem('todos', JSON.stringify(todoArr));
+
   if(localStorage.getItem('todos') === null ||localStorage.getItem('todos') === '[]') {
     initialStorage();
   } 
@@ -29,11 +31,11 @@ export const render = function () {
 
     li.innerHTML = `
     <label class="item__checkwrap">
-      <input class="item__checkbox" type="checkbox">
+      <input class="item__checkbox" type="checkbox" data-index=${index}>
       <span class="item__checkmark"></span>
       <span class="item__checkborder"></span>
     </label>
-    <p class="item__status ">${todo}</p>
+    <p class="item__status data-index=${index}">${todo}</p>
     <button type="button" class="item__delete" data-index=${index}>X</button>`
 
     li.classList.add('item')
