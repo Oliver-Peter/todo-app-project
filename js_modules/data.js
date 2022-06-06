@@ -5,7 +5,6 @@ export function initialStorage() {
 
 let defaultTodosJSON = JSON.stringify(defaultTodos);
 
-
 localStorage.setItem('todos', defaultTodosJSON);
 
 };
