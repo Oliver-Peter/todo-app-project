@@ -11,7 +11,7 @@ export let todoArr = [];
 
 export let items = document.querySelectorAll('.item');
 
-export const render = function () {
+export const render = function (arr = localStorage.getItem('todos')) {
   list.innerHTML = '';
 
 
@@ -19,9 +19,13 @@ export const render = function () {
     console.log(localStorage.getItem('todos'));
     initialStorage();
   } 
-  
+   else {
 
-  todoArr = JSON.parse(localStorage.getItem('todos'));
+    todoArr = JSON.parse(arr);
+
+   }
+
+  
 
   todoArr.forEach((todo, index) => {
 
@@ -48,7 +52,7 @@ export const render = function () {
   let itemMenu = document.createElement('li');
   items = document.querySelectorAll('.item');
 
-  itemMenu.innerHTML = `<p class="tasks__open">${items.length -1} remain</p>
+  itemMenu.innerHTML = `<p class="tasks__open">${items.length - 1} remain</p>
                         <button type="button" id='clearAll' class="tasks__clear">Clear Completed</button>
                       <span class="filter">
                         <button type="button" id='all' class="filter__option filter__option--active">All</button>

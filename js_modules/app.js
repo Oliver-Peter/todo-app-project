@@ -21,6 +21,7 @@ import * as Tools from "/js_modules/tools.js";
     if (event.target.matches('.item__checkbox')) {
       
       Tools.countOpenTasks(event.target);
+      Tools.taskDone();
     };
 
     if (event.target.matches('#clearAll')) {
@@ -28,7 +29,7 @@ import * as Tools from "/js_modules/tools.js";
     };
 
     if (event.target.matches('#completed')) {
-      /* Tools.filterCompleted(); */
+      render(localStorage.getItem('tasksDone'));
     }
   });
   
