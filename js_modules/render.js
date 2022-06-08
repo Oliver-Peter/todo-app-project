@@ -11,12 +11,12 @@ export let todoArr = [];
 
 export let items = document.querySelectorAll('.item');
 
-export const render = function (arr = localStorage.getItem('todos')) {
+export const render = function (arr = localStorage.getItem('defaultTodos')) {
   list.innerHTML = '';
 
 
-  if (localStorage.getItem('todos') === null ||localStorage.getItem('todos') === '[]') {
-    console.log(localStorage.getItem('todos'));
+  if (localStorage.getItem('defaultTodos') === null ||localStorage.getItem('defaultTodos') === '[]') {
+    console.log(localStorage.getItem('defaultTodos'));
     initialStorage();
   } 
    else {
@@ -32,16 +32,34 @@ export const render = function (arr = localStorage.getItem('todos')) {
     // NOTE add todos to list
     let li = document.createElement('li');
 
-    li.innerHTML = `
-    <label class="item__checkwrap">
-      <input class="item__checkbox" type="checkbox" data-index=${index}>
-      <span class="item__checkmark"></span>
-      <span class="item__checkborder"></span>
-    </label>
-    <p class="item__status data-index=${index}">${todo}</p>
-    <button type="button" class="item__delete" data-index=${index}>X</button>`
 
     li.classList.add('item');
+
+    if (todo.status === 'checked') {
+      
+      console.log('ja');
+
+      li.innerHTML = `    
+      <label class="item__checkwrap">
+        <input class="item__checkbox" type="checkbox" ${todo.status} data-index=${index}>
+        <span class="item__checkmark"></span>
+        <span class="item__checkborder"></span>
+      </label>
+      <p class="item__status item__status--done" data-index=${index}>${todo.task}</p>
+    <button type="button" class="item__delete" data-index=${index}>X</button>`;
+
+    } else {
+
+      li.innerHTML = `    
+      <label class="item__checkwrap">
+        <input class="item__checkbox" type="checkbox" data-index=${index}>
+        <span class="item__checkmark"></span>
+        <span class="item__checkborder"></span>
+      </label>
+      <p class="item__status" data-index=${index}>${todo.task}</p>
+      <button type="button" class="item__delete" data-index=${index}>X</button>`;
+    }
+  
 
     list.appendChild(li);
 

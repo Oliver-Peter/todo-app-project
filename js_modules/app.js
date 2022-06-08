@@ -31,16 +31,18 @@ import * as Tools from "/js_modules/tools.js";
     if (event.target.matches('#completed')) {
       render(localStorage.getItem('tasksDone'));
     }
+
+    if (event.target.matches('#active')) {
+      render(localStorage.getItem('tasksOpen'));
+    }
+
+    if (event.target.matches('#all')) {
+      render(localStorage.getItem('allTasks'));
+    }
   });
   
   todoInput.addEventListener('keydown', event =>  {
-    if(event.key == 'Enter') {
-      event.preventDefault();
-      todoArr.unshift(event.target.value);
-      localStorage.setItem('todos', JSON.stringify(todoArr));
-      render();
-      event.target.value = '';
-    }
+    Tools.addTask(event);
   })
 
 
