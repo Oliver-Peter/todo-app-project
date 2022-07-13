@@ -1,0 +1,16 @@
+body {
+  --clr-bg-main: hsl(233, 11%, 84%);
+  --clr-bg-items: hsl(236, 33%, 92%);
+  --clr-primary: hsl(235, 19%, 35%);
+  --clr-secundary: hsl(0, 0%, 98%);
+  --clr-inactive: hsl(236, 9%, 61%);
+  --clr-active: var(--BlueCrayola);
+  
+  --clr-check-gradiant1: hsl(192, 100%, 67%);
+  --clr-check-gradiant2: hsl(280, 87%, 65%);
+  
+  --backg-mobile: url(../images/bg-mobile-light.jpg);
+  --backg-desktop: url(../images/bg-desktop-light.jpg);
+  
+  --theme-icon: url(../images/icon-moon.svg);
+  }

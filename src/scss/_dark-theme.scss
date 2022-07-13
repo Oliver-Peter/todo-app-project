@@ -1,0 +1,16 @@
+body {
+  --clr-bg-main: hsl(235, 21%, 11%);
+  --clr-bg-items: hsl(235, 24%, 19%);
+  --clr-primary: hsl(234, 39%, 85%);
+  --clr-secundary: hsl(0, 0%, 98%);
+  --clr-inactive: hsl(233, 14%, 35%);
+  --clr-active: hsl(220, 98%, 61%);
+  
+  --clr-check-gradiant1: #6C49C6;
+  --clr-check-gradiant2: #761C76;
+  
+  --backg-mobile: url(../images/bg-desktop-dark.jpg);
+  --backg-desktop: url(../images/bg-desktop-dark.jpg);
+
+  --theme-icon: url(../images/icon-sun.svg);
+  }

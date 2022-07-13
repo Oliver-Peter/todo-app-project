@@ -1,8 +1,9 @@
 @import "./presets";
 @import "./mixins";
-@import "./colors";
 @import "./item";
 @import "./menu";
+@import "light-theme";
+@import "dark-theme";
 
 .container {
   display: flex;
