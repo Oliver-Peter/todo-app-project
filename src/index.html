@@ -72,21 +72,7 @@
     </div>
   </div>
   <script type="module" src="https://kit.fontawesome.com/936e07661a.js" crossorigin="anonymous">
-    let tod = ["Bügeln", "Waschen"];
-    async function setTodos() {
-      try {
-        const response = await fetch('http://localhost:3002/todos', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(tod),
-        })
-        tod = await response.json();
-        console.log(tod);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }
-    setTodos;
+
 
   </script>
 </body>

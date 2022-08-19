@@ -1,4 +1,3 @@
-import { initialStorage  } from "./data.js";
 import { render, todoArr } from "./render.js";
 import { 
   list, 

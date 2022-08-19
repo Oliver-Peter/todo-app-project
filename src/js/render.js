@@ -1,7 +1,8 @@
 //SECTION import necessyry modules and set default data and  variables
 
-import {initialStorage} from './data.js';
+
 import { list } from "./DOM.js";
+
 
 //!SECTION
 

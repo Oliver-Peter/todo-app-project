@@ -1,5 +1,34 @@
 import { render, todoArr } from "./render.js";
 
+/* ======== async functions: await&fetch ======== */
+
+export async function postTodos(todos) {
+  try {
+    const response = await fetch('http://localhost:3002/todos', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(todos),
+    })
+    todos = await response.json();
+    console.log(todos);
+  } catch(error) {
+    console.error('Error:', error);
+  }
+}
+
+export async function getTodos() {
+  try {
+    const response = await fetch('http://localhost:3002/todos');
+    return await response.json();
+
+    
+  } catch (error) {
+    console.error('Error: ', error);
+  }
+}
+
+/* -------------------------------------------- */
+
 
 export function addTask(event) {
   if (event.key == 'Enter') {
