@@ -1,4 +1,4 @@
-
+/* 
 export const defaultTodos = [
   {task:'Einkaufen gehen', status: ''}, 
   {task:'Wäsche machen', status:''},
@@ -11,7 +11,9 @@ let defaultTodosJSON = JSON.stringify(defaultTodos);
 
 localStorage.setItem('defaultTodos', defaultTodosJSON);
 localStorage.setItem('allTasks', defaultTodosJSON);
-};
+}; */
+
+
 
 
 

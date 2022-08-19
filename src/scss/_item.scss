@@ -86,10 +86,11 @@
   &__status {
     font-size: 1.6rem;
     color: var(--clr-primary);
+    cursor: default;
 
     @include mediaViewport(desktop) {
       font-size: 1.8rem;
-      cursor: pointer;
+      cursor: default;
     }
   }
 

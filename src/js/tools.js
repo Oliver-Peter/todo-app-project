@@ -1,122 +1,56 @@
-import { render, todoArr, items } from "./render.js";
+import { render, todoArr } from "./render.js";
 
 
 export function addTask(event) {
   if (event.key == 'Enter') {
     event.preventDefault();
 
-    let newTasks = (JSON.parse(localStorage.getItem('allTasks')));
-    newTasks.unshift({ task: event.target.value, status: '' });
-    localStorage.setItem('allTasks', JSON.stringify(newTasks));
+    todoArr.unshift({ task: event.target.value, status: '' });
+    localStorage.setItem('allTasks', JSON.stringify(todoArr));
 
     event.target.value = '';
 
-    render(JSON.parse(localStorage.getItem('allTasks')));
+    render();
   }
 }
 
 
-export function remove(index) {
+export function remove(event) {
 
-  let tasks = JSON.parse(localStorage.getItem('allTasks'));
-
-
-  tasks.splice(index, 1);
-
-  console.log(tasks);
-
+  let itemIndex = event.target.dataset.index;
+  todoArr.splice(itemIndex, 1);
+  localStorage.setItem("allTasks", JSON.stringify(todoArr));
+  render();
+}
 
 
-  /* localStorage.setItem('todos', JSON.stringify(todoArr));
-  localStorage.setItem('tasksDone', JSON.stringify(todoArr));
-  render(); */
-};
+export function taskDone(event) {
 
+  let item = event.target.parentElement.parentElement;
+  let checkbox = event.target;
+  let task = item.querySelector(".item__status");
+  let index = task.dataset.index
 
-//NOTE counter function
+  if (checkbox.checked) {
+    todoArr[index].status = "checked";
+    let itemDoneArr = todoArr.splice(index, 1);
+    let itemDone = itemDoneArr[0];
+    todoArr.push(itemDone);
 
-let counter = items.length - 1;
-let taskCounter = document.querySelector('.tasks__open');
-
-export function countOpenTasks(checkBox) {
-
-
-  if (checkBox.checked) {
-    counter -= 1;
 
   } else {
-    counter += 1;
+    todoArr[index].status = "";
+    let itemsNotDone = todoArr.splice(index, 1);
+    let itemNotDone = itemsNotDone[0];
+    todoArr.unshift(itemNotDone);
   }
-  taskCounter.innerHTML = counter + " remain";
-}
 
-//FiXME
+  localStorage.setItem("allTasks", JSON.stringify(todoArr));
 
-
-
-export function taskDone() {
-
-
-  /* let list = document.querySelectorAll('.todo-list'); */
-
-  let allTasks = JSON.parse(localStorage.getItem('allTasks'));
-
-  let items = document.querySelectorAll('li.item');
-
-
-  items.forEach(item => {
-    let check = item.querySelector('.item__checkbox');
-    let task = item.querySelector('.item__status');
-
-    if (check.checked == true) {
-      allTasks.find(element => {
-        if (element.task === task.innerText) {
-          element.status = 'checked';
-          task.classList.add('item__status--done');
-        }
-      });
-    }
-
-    if (check.checked == false) {
-      allTasks.find(element => {
-        if (element.task === task.innerText) {
-          element.status = '';
-          task.classList.remove('item__status--done');
-        }
-      })
-    }
-  });
-
-  localStorage.setItem('allTasks', JSON.stringify(allTasks));
-
-  //NOTE So nicht!
-
-  /*  let list = document.querySelector('.todo-list');
- 
-   let items = list.querySelectorAll('.item');
- 
-   let completedTasks = []
- 
-   let openTasks = JSON.parse(localStorage.getItem('tasksOpen'));
- 
-   items.forEach((item, index) => {
-     let check =  item.querySelector('.item__checkbox');
-     let itemStatus = item.children[1];
-     if (check.checked) {
-       itemStatus.classList.add('item__status--done');
-       completedTasks.push({task:itemStatus.innerText, status:'checked'});
-       console.log(index);
-         
-         } else {
-       itemStatus.classList.remove('item__status--done');
-     }
-     
-   });
-   
-   localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
-   localStorage.setItem('tasksOpen', JSON.stringify(openTasks)); */
+  render();
 
 }
+
 
 export function filterCompleted() {
   let allTasks = JSON.parse(localStorage.getItem('allTasks'));
@@ -124,14 +58,13 @@ export function filterCompleted() {
   let openTasks = [];
 
   allTasks.forEach(task => {
-    if (task.status !== '') {
+    if (task.status == 'checked') {
       openTasks.push(task);
       console.log(task.task);
     }
   })
 
   render(openTasks);
-
 }
 
 export function filterActive() {
@@ -144,21 +77,30 @@ export function filterActive() {
     }
   })
 
-
   render(activeTasks);
 }
 
 //NOTE clear completed
 
-/* export function clearAllCompleted() {
-  
-  let toDelete = JSON.parse(localStorage.getItem('tasksDone'));
+export function clearAllCompleted() {
 
-    toDelete == [];
-    localStorage.setItem('todos' , JSON.stringify(toDelete)); 
-    localStorage.setItem('todos' JSON.stringify(openTasks)) 
-    render(toDelete);
-  } */
+  let listItems = document.querySelectorAll('.item__status');
+  let tasks = JSON.parse(localStorage.getItem('allTasks'));
+
+ 
+
+  listItems.forEach(item => {
+    if (item.classList.contains('item__status--done')) {
+
+      tasks.splice(item.dataset.index);
+    }
+  });
+
+  localStorage.setItem('allTasks', JSON.stringify(tasks))
+
+  render();
+
+}
 
 
 

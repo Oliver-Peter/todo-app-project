@@ -1,4 +1,4 @@
-body {
+body[data-theme = "dark-theme"] {
   --clr-bg-main: hsl(235, 21%, 11%);
   --clr-bg-items: hsl(235, 24%, 19%);
   --clr-primary: hsl(234, 39%, 85%);

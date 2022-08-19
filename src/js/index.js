@@ -15,19 +15,16 @@ import '../scss/main.scss';
 
 
   list.addEventListener('click', (event) => {
-    if (event.target.matches('.item__delete')) {
-      Tools.remove(event.target.dataset.index);
-    };
+
 
     if (event.target.matches('.item__checkbox')) {
       
-      Tools.countOpenTasks(event.target);
-      Tools.taskDone();
+    
+      Tools.taskDone(event);
     };
-//FIXME if Anweisung hier und in tools.js fixen
-  /*   if (event.target.matches('#clearAll')) {
+    if (event.target.matches('#clearAll')) {
       Tools.clearAllCompleted();
-    }; */
+    };
 
     if (event.target.matches('#completed')) {
       Tools.filterCompleted();
@@ -40,11 +37,28 @@ import '../scss/main.scss';
     if (event.target.matches('#all')) {
       render(JSON.parse(localStorage.getItem('allTasks')));
     }
+
+    if (event.target.matches('.item__delete')) {
+      Tools.remove(event);
+    }
   });
   
   todoInput.addEventListener('keydown', event =>  {
     Tools.addTask(event);
   })
+
+  const themeButton = document.querySelector('.theme-switch');
+  const body = document.querySelector('body');
+
+  themeButton.addEventListener('click', setTheme);
+
+  function setTheme() {
+   if(body.dataset.theme === "dark-theme") {
+    body.dataset.theme = "light-theme";
+   } else {
+    body.dataset.theme = "dark-theme";
+   }
+  };
 
 
 

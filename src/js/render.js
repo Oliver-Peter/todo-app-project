@@ -8,25 +8,21 @@ import { list } from "./DOM.js";
 // SECTION render function
 
 export let todoArr = [];
-
 export let items = document.querySelectorAll('.item');
 
-export const render = function (arr = JSON.parse(localStorage.getItem('defaultTodos'))) {
+export const render = function (arr) {
   list.innerHTML = '';
 
 
-  if (localStorage.getItem('defaultTodos') === null ||localStorage.getItem('defaultTodos') === '[]') {
-    console.log(localStorage.getItem('defaultTodos'));
-    initialStorage();
+  if (arr) {
+    todoArr = arr;
   } 
    else {
-
-    todoArr = arr
+    todoArr = JSON.parse(localStorage.getItem("allTasks"));
 
    }
 
   
-
   todoArr.forEach((todo, index) => {
 
     // NOTE add todos to list
@@ -58,17 +54,34 @@ export const render = function (arr = JSON.parse(localStorage.getItem('defaultTo
       <button type="button" class="item__delete" data-index=${index}>X</button>`;
     }
   
-
     list.appendChild(li);
 
   });
 
-  // NOTE add item-Menue to list
+
+
+  //SECTION add item-Menue to list
 
   let itemMenu = document.createElement('li');
-  items = document.querySelectorAll('.item');
 
-  itemMenu.innerHTML = `<p class="tasks__open">${items.length - 1} remain</p>
+
+
+
+  //NOTE Codeblock for todo counter
+  
+  let items = document.querySelectorAll("li.item");
+  let counter = 0;
+
+  items.forEach(item=> {
+    if(item.firstElementChild.control.checked == false) {
+     counter += 1;
+    }
+  })
+
+ 
+  
+
+  itemMenu.innerHTML = `<p class="tasks__open">${counter} remain</p>
                         <button type="button" id='clearAll' class="tasks__clear">Clear Completed</button>
                       <span class="filter">
                         <button type="button" id='all' class="filter__option filter__option--active">All</button>
@@ -81,6 +94,8 @@ export const render = function (arr = JSON.parse(localStorage.getItem('defaultTo
   list.appendChild(itemMenu);
 
 }
+
+//!SECTION
 
 // NOTE render it! / do magic
 render();

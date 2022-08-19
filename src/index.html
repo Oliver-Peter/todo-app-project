@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Todo app</title>
 
 </head>
-<body class="dark-theme">
+
+<body data-theme="dark-theme">
   <div class="container">
     <div class="todo-wrapper">
       <div class="hero">
         <h1 class="hero__title">Todo</h1>
-        <button type="button" class="theme"></button>
+        <button type="button" data-theme="" class="theme-switch"></button>
       </div>
       <form class="item creator">
         <label class="item__checkwrap">
-          <input class="item__checkbox" type="checkbox" >
+          <input class="item__checkbox" type="checkbox">
           <span class="item__checkmark"></span>
           <span class="item__checkborder"></span>
         </label>
         <input class="new-todo" type="text" placeholder="Create a new todo..."> <!-- Probleme mit BEMnamseln -->
       </form>
-        <ul class="todo-list">
-          <!-- <li class="item">
+      <ul class="todo-list">
+        <!-- <li class="item">
             <label class="item__checkwrap">
               <input class="item__checkbox" type="checkbox">
               <span class="item__checkmark"></span>
@@ -50,7 +52,7 @@
           </li>
           ... usw  -->
 
-<!--           <li class="menu">
+        <!--           <li class="menu">
               <p class="task__open">5 items</p>
               <button type="button" class="task__clear">Clear Completed</button>
             <span class="filter">
@@ -59,16 +61,34 @@
               <button type="button" class="filter__option">Completed</button>
             </span>
           </li> -->
-        </ul> 
+      </ul>
       <div class="howto">
-      <p>Drag and drop to recorder list</p>
+        <p>Drag and drop to recorder list</p>
       </div>
     </div>
     <div>
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
     </div>
   </div>
-  <script src="https://kit.fontawesome.com/936e07661a.js" crossorigin="anonymous"></script>
+  <script type="module" src="https://kit.fontawesome.com/936e07661a.js" crossorigin="anonymous">
+    let tod = ["Bügeln", "Waschen"];
+    async function setTodos() {
+      try {
+        const response = await fetch('http://localhost:3002/todos', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(tod),
+        })
+        tod = await response.json();
+        console.log(tod);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+    setTodos;
+
+  </script>
 </body>
+
 </html>
